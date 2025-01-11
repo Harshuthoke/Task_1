@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ symbol }} Metrics</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e8f5e9, #a5d6a7);
+            color: #2e7d32;
+        }
+
+        /* Header */
+        h1 {
+            text-align: center;
+            color: #1b5e20;
+            font-size: 2.5rem;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Metrics Paragraph */
+        p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            text-align: center;
+            color: #2e7d32;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            color: #1b5e20;
+        }
+
+        /* Image Styling */
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 90%;
+            border: 2px solid #c8e6c9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Back Link */
+        a {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: white;
+            background: #43a047;
+            border-radius: 5px;
+            text-align: center;
+            width: fit-content;
+            transition: background 0.3s ease;
+        }
+
+        a:hover {
+            background: #2e7d32;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            p {
+                font-size: 1rem;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            a {
+                width: auto;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ symbol }} Returns and Volatility</h1>
+    <p><b>Annualized Return:</b> {{ annual_return | round(2) }}%</p>
+    <p><b>Annualized Volatility:</b> {{ annual_volatility | round(2) }}%</p>
+    <h2>Stock Performance</h2>
+    <img src="data:image/png;base64,{{ plot_data }}" alt="Stock Performance">
+    <br><br>
+    <a href="/">Back to Top Companies</a>
+</body>
+</html>
